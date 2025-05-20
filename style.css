@@ -1,0 +1,198 @@
+:root {
+  --bg: #fff8f0;
+  --text: #4B3B36;
+  --accent: #B89C8A;
+}
+
+body {
+  background: var(--bg);
+  font-family: 'Quicksand', sans-serif;
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  --bg: #2D2D2D;
+  --text: #EDEDED;
+}
+
+.shop-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-tag {
+  background: #fceee6;
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.filter-tag:hover {
+  background: #f5d0c5;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card:active {
+  animation: unbox 0.4s ease forwards;
+}
+
+@keyframes unbox {
+  0% { transform: scale(0.9) rotate(-2deg); }
+  50% { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.image {
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #eee;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.image:hover .tooltip {
+  opacity: 1;
+}
+
+.details {
+  padding: 1rem;
+  text-align: center;
+}
+
+.details h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.details p {
+  color: #7a6150;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.fake-cart {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.cart-btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.cart-btn:hover {
+  background: #A67C6A;
+}
+
+input[type="checkbox"]:checked + .cart-btn + .popup {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.popup {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  background: #fff;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  color: green;
+}
+
+.receipt {
+  max-width: 400px;
+  margin: 2rem auto;
+  background: #fceee6;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 0.95rem;
+}
+
+.print-btn {
+  display: block;
+  margin: 2rem auto;
+  background: white;
+  border: 1px solid var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.dark-mode-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+@media print {
+  body * { visibility: hidden; }
+  .receipt, .receipt * { visibility: visible; }
+  .receipt { position: absolute; top: 0; left: 0; }
+  .print-btn { display: none; }
+}
