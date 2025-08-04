@@ -3,182 +3,312 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>✨ Anime Merch Mini Shop ✨</title>
+  <meta name="description" content="Premium anime merchandise including mugs, plushies, and posters">
+  <title>✨ Anime Merch Mini Shop ✨ | Premium Collectibles</title>
   <link href="style.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <header class="shop-header">
+    <h1 class="shop-title">✨ Anime Merch Mini Shop ✨</h1>
+    <p class="shop-subtitle">Premium collectibles for true fans</p>
+  </header>
 
-  <h1 class="shop-title">✨ Anime Merch Mini Shop ✨</h1>
+  <nav class="main-nav">
+    <div class="filters">
+      <button class="filter-tag active" data-category="all">All Items</button>
+      <button class="filter-tag" data-category="mugs">☕ Mugs</button>
+      <button class="filter-tag" data-category="plushies">🧸 Plushies</button>
+      <button class="filter-tag" data-category="posters">🖼️ Posters</button>
+    </div>
+    
+    <div class="search-box">
+      <input type="text" placeholder="Search merchandise..." aria-label="Search products">
+      <button aria-label="Search button"><i class="fas fa-search"></i></button>
+    </div>
+  </nav>
 
-  <div class="filters">
-    <span class="filter-tag">☕ Mugs</span>
-    <span class="filter-tag">🧸 Plushies</span>
-    <span class="filter-tag">🖼️ Posters</span>
+  <main class="product-container">
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <article class="card" data-category="mugs">
+        <div class="image unbox">
+          <img src="images/MoonlightMug.png" alt="Moonlight Anime Mug with celestial design" loading="lazy">
+          <div class="tooltip" role="tooltip">✨ Limited edition anime mug!</div>
+          <span class="badge">BESTSELLER</span>
+        </div>
+        <div class="details">
+          <h2>Moonlight Mug</h2>
+          <div class="price-rating">
+            <p class="price">$24.99</p>
+            <div class="stars" aria-label="Rating: 4.5 out of 5 stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="fake-cart">
+            <input type="checkbox" id="cart-toggle-1" hidden>
+            <label for="cart-toggle-1" class="cart-btn">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </label>
+            <div class="popup" role="status">Item Added to Cart!</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="card" data-category="plushies">
+        <div class="image unbox">
+          <img src="images/Tengen Uzui Plush.png" alt="Demon Slayer Tengen Uzui Official Plush" loading="lazy">
+          <div class="tooltip" role="tooltip">💪 Official Bandai 10-inch plush</div>
+          <span class="badge new">NEW</span>
+        </div>
+        <div class="details">
+          <h2>Tengen Uzui Plush</h2>
+          <div class="price-rating">
+            <p class="price">$29.95</p>
+            <div class="stars" aria-label="Rating: 5 out of 5 stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="fake-cart">
+            <input type="checkbox" id="cart-toggle-2" hidden>
+            <label for="cart-toggle-2" class="cart-btn">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </label>
+            <div class="popup" role="status">Item Added to Cart!</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Additional products follow same structure -->
+      <!-- Product 3 -->
+      <article class="card" data-category="mugs">
+        <div class="image unbox">
+          <img src="images/One Piece Travel Mug.png" alt="One Piece Travel Mug with Grand Line map design" loading="lazy">
+          <div class="tooltip" role="tooltip">☕ 3D One Piece Grand Line Map</div>
+        </div>
+        <div class="details">
+          <h2>One Piece Travel Mug</h2>
+          <div class="price-rating">
+            <p class="price">$25.00</p>
+            <div class="stars" aria-label="Rating: 4 out of 5 stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+          <div class="fake-cart">
+            <input type="checkbox" id="cart-toggle-3" hidden>
+            <label for="cart-toggle-3" class="cart-btn">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </label>
+            <div class="popup" role="status">Item Added to Cart!</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="card" data-category="posters">
+        <div class="image unbox">
+          <img src="images/Tanjiro Kamado Poster.png" alt="Demon Slayer Tanjiro Kamado Art Print" loading="lazy">
+          <div class="tooltip" role="tooltip">🔥 High-quality print, 18x24 inches</div>
+        </div>
+        <div class="details">
+          <h2>Tanjiro Kamado Poster</h2>
+          <div class="price-rating">
+            <p class="price">$14.00</p>
+            <div class="stars" aria-label="Rating: 4.5 out of 5 stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="fake-cart">
+            <input type="checkbox" id="cart-toggle-4" hidden>
+            <label for="cart-toggle-4" class="cart-btn">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </label>
+            <div class="popup" role="status">Item Added to Cart!</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="card" data-category="plushies">
+        <div class="image unbox">
+          <img src="images/Bakugomeow Plush.png" alt="My Hero Academia Bakugomeow Cat Plush" loading="lazy">
+          <div class="tooltip" role="tooltip">🐱 17-inch soft faux rabbit fur</div>
+          <span class="badge sale">SALE</span>
+        </div>
+        <div class="details">
+          <h2>Bakugomeow Plush</h2>
+          <div class="price-rating">
+            <p class="price"><span class="original-price">$65.99</span> $55.99</p>
+            <div class="stars" aria-label="Rating: 4 out of 5 stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+          <div class="fake-cart">
+            <input type="checkbox" id="cart-toggle-5" hidden>
+            <label for="cart-toggle-5" class="cart-btn">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </label>
+            <div class="popup" role="status">Item Added to Cart!</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 6 -->
+      <article class="card" data-category="mugs">
+        <div class="image unbox">
+          <img src="images/Blush Bamboo Brew Mug.png" alt="Demon Slayer Nezuko Bamboo Mug" loading="lazy">
+          <div class="tooltip" role="tooltip">🎨 Features Nezuko</div>
+        </div>
+        <div class="details">
+          <h2>Blush Bamboo Brew Mug</h2>
+          <div class="price-rating">
+            <p class="price">$29.00</p>
+            <div class="stars" aria-label="Rating: 5 out of 5 stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="fake-cart">
+            <input type="checkbox" id="cart-toggle-6" hidden>
+            <label for="cart-toggle-6" class="cart-btn">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </label>
+            <div class="popup" role="status">Item Added to Cart!</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 7 -->
+      <article class="card" data-category="posters">
+        <div class="image unbox">
+          <img src="images/Kawaii Power Poster.png" alt="Kawaii Anime Girls Poster Collection" loading="lazy">
+          <div class="tooltip" role="tooltip">🖼️ High-gloss fine art paper</div>
+        </div>
+        <div class="details">
+          <h2>Kawaii Power Poster</h2>
+          <div class="price-rating">
+            <p class="price">$21.00</p>
+            <div class="stars" aria-label="Rating: 4 out of 5 stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+            </div>
+          </div>
+          <div class="fake-cart">
+            <input type="checkbox" id="cart-toggle-7" hidden>
+            <label for="cart-toggle-7" class="cart-btn">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </label>
+            <div class="popup" role="status">Item Added to Cart!</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 8 -->
+      <article class="card" data-category="mugs">
+        <div class="image unbox">
+          <img src="images/Cute Anime Mug.png" alt="Kawaii Anime Character Ceramic Mug" loading="lazy">
+          <div class="tooltip" role="tooltip">💖 400ml ceramic mug with kawaii design</div>
+        </div>
+        <div class="details">
+          <h2>Cute Anime Mug</h2>
+          <div class="price-rating">
+            <p class="price">$28.00</p>
+            <div class="stars" aria-label="Rating: 4.5 out of 5 stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+          <div class="fake-cart">
+            <input type="checkbox" id="cart-toggle-8" hidden>
+            <label for="cart-toggle-8" class="cart-btn">
+              <i class="fas fa-cart-plus"></i> Add to Cart
+            </label>
+            <div class="popup" role="status">Item Added to Cart!</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <aside class="cart-sidebar">
+    <div class="receipt">
+      <h2><i class="fas fa-receipt"></i> Your Boutique Receipt</h2>
+      <div class="cart-items">
+        <div class="cart-item">
+          <span>1x Moonlight Mug</span>
+          <span>$24.99</span>
+        </div>
+      </div>
+      <div class="cart-total">
+        <span>Total:</span>
+        <span>$24.99</span>
+      </div>
+      <button class="checkout-btn">Proceed to Checkout <i class="fas fa-arrow-right"></i></button>
+      <p class="thank-you">Thank you for shopping with us! ✨</p>
+    </div>
+  </aside>
+
+  <footer class="shop-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>About Us</h3>
+        <p>We're anime fans bringing you the highest quality merchandise from Japan and beyond.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2023 Anime Merch Mini Shop. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="floating-controls">
+    <button onclick="window.print()" class="print-btn" aria-label="Print receipt">
+      <i class="fas fa-print"></i>
+    </button>
+    
+    <label class="dark-mode-toggle">
+      <input type="checkbox" id="darkToggle" onchange="document.body.classList.toggle('dark')">
+      <span class="toggle-slider">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+      </span>
+    </label>
   </div>
 
-  <!-- Example product card -->
-  <div class="product-grid">
-    <div class="card">
-      <div class="image unbox">
-
-        <img src="images/MoonlightMug.png" alt="Anime Mug">
-
-        <div class="tooltip">✨ Limited edition anime mug!</div>
-      </div>
-      <div class="details">
-        <h2>Moonlight Mug</h2>
-        <p>$24.99</p>
-        <div class="fake-cart">
-          <input type="checkbox" id="cart-toggle-1" hidden>
-          <label for="cart-toggle-1" class="cart-btn">🛒 Add to Cart</label>
-          <div class="popup">Item Added to Cart!</div>
-        </div>
-      </div>
-    </div>
-    <!-- Repeat more cards as needed -->
-    <div class="card">
-      <div class="image unbox">
-
-        <img src="images/Tengen Uzui Plush.png" alt="Demon Slayer Tengen Uzui Plush">
-
-        <div class="tooltip">💪 Official Bandai 10-inch plush</div>
-      </div>
-      <div class="details">
-        <h2>Tengen Uzui Plush</h2>
-        <p>$29.95</p>
-        <div class="fake-cart">
-          <input type="checkbox" id="cart-toggle-2" hidden>
-          <label for="cart-toggle-2" class="cart-btn">🛒 Add to Cart</label>
-          <div class="popup">Item Added to Cart!</div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Card 3: One Piece Luffy's Hat Mug Set -->
-    <div class="card">
-      <div class="image unbox">
-
-        <img src="images/One Piece Travel Mug.png" alt="One Piece Travel Mug">
-
-        <div class="tooltip">☕ 3D One Piece Grand Line Map </div>
-      </div>
-      <div class="details">
-        <h2>One Piece Travel Mug</h2>
-        <p>$25.00</p>
-        <div class="fake-cart">
-          <input type="checkbox" id="cart-toggle-3" hidden>
-          <label for="cart-toggle-3" class="cart-btn">🛒 Add to Cart</label>
-          <div class="popup">Item Added to Cart!</div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Card 4: Demon Slayer Tanjiro Poster -->
-    <div class="card">
-      <div class="image unbox">
-
-        <img src="images/Tanjiro Kamado Poster.png" alt="Demon Slayer Tanjiro Poster">
-
-        <div class="tooltip">🔥 High-quality print, 18x24 inches</div>
-      </div>
-      <div class="details">
-        <h2>Tanjiro Kamado Poster</h2>
-        <p>$14.00</p>
-        <div class="fake-cart">
-          <input type="checkbox" id="cart-toggle-4" hidden>
-          <label for="cart-toggle-4" class="cart-btn">🛒 Add to Cart</label>
-          <div class="popup">Item Added to Cart!</div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Card 5: Bakugomeow MHA Plush -->
-    <div class="card">
-      <div class="image unbox">
-
-        <img src="images/Bakugomeow Plush.png" alt="Bakugomeow MHA Plush">
-
-        <div class="tooltip">🐱 17-inch soft faux rabbit fur</div>
-      </div>
-      <div class="details">
-        <h2>Bakugomeow Plush</h2>
-        <p>$55.99</p>
-        <div class="fake-cart">
-          <input type="checkbox" id="cart-toggle-5" hidden>
-          <label for="cart-toggle-5" class="cart-btn">🛒 Add to Cart</label>
-          <div class="popup">Item Added to Cart!</div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Card 6: Demon Slayer x Rascal Mug -->
-    <div class="card">
-      <div class="image unbox">
-
-        <img src="images/Blush Bamboo Brew Mug.png" alt="Blush Bamboo Brew Mug">
-        <div class="tooltip">🎨 Features Nezuko</div>
-      </div>
-      <div class="details">
-        <h2>Blush Bamboo Brew Mug</h2>
-        <p>$29.00</p>
-        <div class="fake-cart">
-          <input type="checkbox" id="cart-toggle-6" hidden>
-          <label for="cart-toggle-6" class="cart-btn">🛒 Add to Cart</label>
-          <div class="popup">Item Added to Cart!</div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Card 7: LineChu Anime Poster -->
-    <div class="card">
-      <div class="image unbox">
-
-        <img src="images/Kawaii Power Poster.png" alt="Kawaii Power Poster">
-        <div class="tooltip">🖼️ High-gloss fine art paper</div>
-      </div>
-      <div class="details">
-        <h2>Kawaii Power Poster</h2>
-        <p>$21.00</p>
-        <div class="fake-cart">
-          <input type="checkbox" id="cart-toggle-7" hidden>
-          <label for="cart-toggle-7" class="cart-btn">🛒 Add to Cart</label>
-          <div class="popup">Item Added to Cart!</div>
-        </div>
-      </div>
-    </div>
-  
-    <!-- Card 8: Cute Anime Ceramic Mug -->
-    <div class="card">
-      <div class="image unbox">
-        <img src="images/Cute Anime Mug.png" alt="Cute Anime Ceramic Mug">
-        <div class="tooltip">💖 400ml ceramic mug with kawaii design</div>
-      </div>
-      <div class="details">
-        <h2>Cute Anime Mug</h2>
-        <p>$28.00</p>
-        <div class="fake-cart">
-          <input type="checkbox" id="cart-toggle-8" hidden>
-          <label for="cart-toggle-8" class="cart-btn">🛒 Add to Cart</label>
-          <div class="popup">Item Added to Cart!</div>
-        </div>
-      </div>
-    </div>
-  </div>  
-  </div>
-
-  <div class="receipt">
-    <h2>🧾 Your Boutique Receipt</h2>
-    <p>1x Moonlight Mug - $24.99</p>
-    <p>Total: $24.99</p>
-    <p>Thank you for shopping ✨</p>
-  </div>
-
-  <button onclick="window.print()" class="print-btn">🧾 Print Receipt</button>
-
-  <label class="dark-mode-toggle">
-    🌙 <input type="checkbox" id="darkToggle" onchange="document.body.classList.toggle('dark')"> Dark Mode
-  </label>
-  
+  <script>
+    // Simple filter functionality
+    document.querySelectorAll('.filter-tag').forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        
+        // Update active button
+        document.querySelectorAll('.filter-tag').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        
+        // Filter products
+        document.querySelectorAll('.card').forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
